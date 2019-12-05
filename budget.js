@@ -57,6 +57,9 @@ console.log('== Total Federal Income Tax: $' + federalIncomeTax);
 
 
 // INCOME
+var salaryOrHourly
+var paySchedule;            // bi monthly, monthly, bi weekly, weekly
+
 var initialIncome;
 
 // MODIFIERS
@@ -99,7 +102,6 @@ var studentLoanTotal
 var studentLoanInterestRate; 
 var studentLoanRepaymentPeriod;     // desired payment deadline
 var studentLoanMonthlyRepayment;    // planned/desired monthly payments
-
 var tuition;
 var schoolFees;
 var textBooks;              // approximate $100 per class if you don't know
