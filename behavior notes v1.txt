@@ -1,0 +1,31 @@
+Page behavior psuedo-psuedo-code:
+Index:
+Landing page with logo centered. Span beneath header talking about site. Underneath that, two buttons to go to lifestyle page or budget page.
+
+Budget:
+1st draft of behavior, I don't know how difficult this will actually be: Inner body loads blank as modal slides in from right side of screen to center. This modal will ask a question and have an input box. If it's asking for dollar amounts, have the user input only be a number (no $, put it outside the input box). Each question has it's own modal (is this a good idea?). When a question is answered, user can either press enter(hopefully not hard to see if they do this) or click next button. This causes current modal to slide offscreen to the left, and the next question's modal slides in from the right.
+After all questions are answered, the inner body html will load with the following info:
+On the left, the questions and answers input to the page.
+In the center, if there are stats we want to visually adjust, have sliders for those variables.
+On the left, the output info about budget and cost breakdowns.
+(this is all tentative, we'll figure it out as we go lmao)
+
+Lifestyle:
+(v1)
+On left, questions about lifestyle with checkboxes valued (1-5). The answers don't have to be 1-5, but these are the values tied to the boxes.
+On the right, a dynamic... thermometer? scale? of some sort will rise depending on sum of value of checkboxes. As a preliminary idea on how this would work, the scale would have a colorful "fill" element, on top of the scale. Fill would be fully hidden on load of the page. When values start being added, it starts being un-hidden from the bottom up.
+Math for this would look something like highest possible sum / sum of checkbox values = % fill hidden
+once again idk how hard that would be, if some other method would be way easier just use that instead
+
+Templating?
+note: We don't actually have to do templating, and it might be simpler and easier to not use them in our case. Pretty sure the requirement about "dynamically generates pages based on data stored on the backend" is fulfilled by my current node server preloading the files. Either way it hopefully wouldn't be too hard to templatize our stuff. (would this help with the shit ton of modals for budget page?)
+-Layout template with header, footer
+  header will have icon, title of site
+  footer will have OSU logo, project info, and our names
+-View templates:
+  -Index
+  -budgets
+  -lifestyle
+-Partials:
+  -question modal for budget page
+  -lifestyle checkboxes and question
