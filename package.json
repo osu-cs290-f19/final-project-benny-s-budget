@@ -1,0 +1,26 @@
+{
+  "name": "final-project-benny-s-budget",
+  "version": "1.0.0",
+  "description": "CS290 Final Project at Oregon State University; a website to assist with budgeting ",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-f19/final-project-benny-s-budget.git"
+  },
+  "author": "Christopher LeMoss, Kelly Norris, Richard Villagrana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-f19/final-project-benny-s-budget/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-f19/final-project-benny-s-budget#readme"
+}
