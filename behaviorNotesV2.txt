@@ -1,3 +1,42 @@
+VERSION 2
+Page Behavior
+    Index
+        Landing page with logo centered. Span beneath header talking about site. Underneath that, two buttons to go to lifestyle page or budget page.
+    Budget
+        Inner body loads blank as modal slides in from right side of screen to center. This modal will ask a question and have an input box. If it's asking for dollar amounts, have the user input only be a number (no $, put it outside the input box). Each question has it's own modal (is this a good idea?). When a question is answered, user can either press enter (hopefully not hard to see if they do this) or click next button. This causes current modal to slide offscreen to the left, and the next question's modal slides in from the right.
+
+        After all questions are answered, the inner body html will load with the following info: 
+            On the left, the questions and answers input to the page.
+            In the center, if there are stats we want to visually adjust, have sliders for those variables.
+            On the left, the output info about budget and cost breakdowns.
+        
+Templating
+    Layouts 
+        main.handlebars: template with header and footer partials
+    Partials
+        header.handlebars:  will have icon, title of site
+        footer.handlebars:  will have OSU logo, project info, and our names
+        modal.handelbars:   prompts the user for a question
+    Other Views
+        index.handlebars
+        budget.handlebars
+
+Client-Side JavaScript
+    index.js
+        Button requests budget.handlebars from the server
+    budget.js
+        Accesses user input for monthly expenses and stores the responses as variables
+        Uses https://github.com/daneden/animate.css to slide page when user clicks the arrows (npm install --save animate.css
+        Calculates income tax based on state (assumes resident of US, Colorado & New Jersey don't work yet 'cause they're weird)
+        Substracts annual income from annaul expenses
+        Allows the user to either click arrows or press enter to continue to the next question
+        Once final response is stored, displays:
+            - all the values the user entered
+            - a pie chart of various areas of expense (uses canvasJS https://canvasjs.com/javascript-charts/pie-chart-legends/)
+        Allows for updating responses and viewing updated graph without refreshing
+
+        
+VERSION 1
 Page behavior psuedo-psuedo-code:
 Index:
 Landing page with logo centered. Span beneath header talking about site. Underneath that, two buttons to go to lifestyle page or budget page.
