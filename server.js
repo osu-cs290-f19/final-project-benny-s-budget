@@ -11,6 +11,10 @@ app.get('/', function(req, res, next) {
     res.status(200).render('index');
 });
 
+app.get('/budget', function(req, res, next) {
+    res.status(200).render('budget');
+})
+
 app.use(express.static('public'));
 
 app.get('*', function(req, res) {
