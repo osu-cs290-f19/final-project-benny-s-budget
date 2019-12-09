@@ -8,6 +8,226 @@
             "headOfHousehold":      [0, 13851, 52851, 84201, 160701, 204101, 510301]
         }   
     },
+    "Alabama": {
+        "rates":                [2, 4, 5],
+        "brackets": {
+            "single":           [0, 500, 3000],
+            "marriedJointly":   [0, 1000, 6000] 
+        }    
+    },
+    "Arizona": {
+        "rates":                [2.59, 2.88, 3.36, 4.24, 4.54],
+        "brackets": {
+            "single":           [0, 11047, 27614, 55226],
+            "marriedJointly":   [0, 22092, 55226, 110450, 331346] 
+        }    
+    },
+    "Arkansas": {
+        "rates":                [9.9, 2.5, 3.5, 4.5, 5, 6.9],
+        "brackets": {
+            "single":           [0, 4500, 8900, 13400, 22200, 37200],
+            "marriedJointly":   [0, 4500, 8900, 13400, 22200, 37200] 
+        }    
+    },
+    "California": {
+        "rates":                [1, 2, 4, 6, 8, 9.3, 10.3, 11.3, 12.3, 13.3],
+        "brackets": {
+            "single":           [0, 8544, 20255, 31969, 44377, 56085, 286492, 343788, 572980, 1000000],
+            "marriedJointly":   [0, 17088, 40510, 63938, 88754, 112170, 572984, 687576, 1000000, 1145960] 
+        }    
+    },
+    "Colorado": {
+            
+    },
+    "Conneticut": {
+        "rates":                [3, 5, 5.5, 6, 6.5, 6.9, 6.99],
+        "brackets": {
+            "single":           [0, 10000, 50000, 100000, 200000, 250000, 500000],
+            "marriedJointly":   [0, 20000, 100000, 200000, 400000, 500000, 1000000] 
+        }    
+    },
+    "Delaware": {
+        "rates":                [2.2, 3.9, 4.8, 5.2, 5.55, 6.6],
+        "brackets": {
+            "single":           [0, 2000, 5000, 10000, 20000, 25000, 60000],
+            "marriedJointly":   [0, 2000, 5000, 10000, 20000, 25000, 60000] 
+        }    
+    },
+    "Georgia": {
+        "rates":                [1, 2, 3, 4, 5, 5.75],
+        "brackets": {
+            "single":           [0, 750, 2250, 3750, 5250, 7000],
+            "marriedJointly":   [0, 1000, 3000, 5000, 7000, 10000] 
+        }    
+    },
+    "Hawaii": {
+        "rates":                [1.4, 3.2, 5.5, 6.4, 6.8, 7.2, 7.6, 7.9, 8.25, 9, 10, 11],
+        "brackets": {
+            "single":           [0, 2400, 4800, 9600, 14400, 19200, 24000, 36000, 48000, 150000, 175000, 200000],
+            "marriedJointly":   [0, 4800, 9600, 19200, 28800, 38400, 48000, 72000, 96000, 300000, 350000, 400000] 
+        }    
+    },
+    "Idaho": {
+        "rates":                [1.13, 3.13, 3.63, 4.63, 5.63, 6.63, 6.93],
+        "brackets": {
+            "single":           [0, 1541, 3081, 4622, 6162, 7703, 11554],
+            "marriedJointly":   [0, 3081, 6162, 9243, 12324, 15405, 23108] 
+        }    
+    },
+    "Illinois": {
+        "rates":                [4.95],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Indiana": {
+        "rates":                [3.23],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Iowa": {
+        "rates":                [0.33, 0.67, 2.25, 4.14, 5.63, 5.96, 6.25, 7.44, 8.53],
+        "brackets": {
+            "single":           [0, 1638, 3276, 6552, 14742, 24570, 32760, 49140, 73710],
+            "marriedJointly":   [0, 1638, 3276, 6552, 14742, 24570, 32760, 49140, 73710] 
+        }    
+    },
+    "Kansas": {
+        "rates":                [3.1, 5.25, 5.7],
+        "brackets": {
+            "single":           [2500, 15000, 30000],
+            "marriedJointly":   [5000, 30000, 60000] 
+        }    
+    },
+    "Kentucky": {
+        "rates":                [5],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0]
+        }
+    },
+    "Louisiana": {
+        "rates":                [2, 4, 6],
+        "brackets": {
+            "single":           [0, 12500, 50000],
+            "marriedJointly":   [0, 25000, 100000] 
+        }    
+    },
+    "Maine": {
+        "rates":                [5.8, 6.75, 7.15],
+        "brackets": {
+            "single":           [0, 21850, 51700],
+            "marriedJointly":   [0, 43700, 103400] 
+        }    
+    },
+    "Maryland": {
+        "rates":                [2, 3, 4, 4.75, 5, 5.25, 5.5, 5.75],
+        "brackets": {
+            "single":           [0, 1000, 2000, 3000, 100000, 125000, 150000, 250000],
+            "marriedJointly":   [0, 1000, 2000, 3000, 150000, 175000, 225000, 300000] 
+        }    
+    },
+    "Massachusetts": {
+        "rates":                [5.05],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Michigan": {
+        "rates":                [4.25],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Minnesota": {
+        "rates":                [5.35, 7.05, 7.85, 9.85],
+        "brackets": {
+            "single":           [0, 26520, 87110, 163890],
+            "marriedJointly":   [0, 38770, 154020, 273150] 
+        }    
+    },
+    "Missouri": {
+        "rates":                [3, 4, 5],
+        "brackets": {
+            "single":           [1000, 5000, 10000],
+            "marriedJointly":   [1000, 5000, 10000] 
+        }    
+    },
+    "Montana": {
+        "rates":                [1, 2, 3, 4, 5, 6, 6.9],
+        "brackets": {
+            "single":           [0, 3100, 5400, 8200, 11100, 14300, 18400],
+            "marriedJointly":   [0, 3100, 5400, 8200, 11100, 14300, 18400] 
+        }    
+    },
+    "Nebraska": {
+        "rates":                [2.46, 3.51, 5.01, 6.84],
+        "brackets": {
+            "single":           [0, 3290, 19720, 31780],
+            "marriedJointly":   [0, 6570, 39450, 63550] 
+        }    
+    },
+    "New Hampshire": {
+        "rates":                [5],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "New Jersey": {
+        "rates":                [1.4, 1.75, 3.5, 5.53, 6.37, 8.97, 10.75],
+        "brackets": {
+            "single":           [0, 20000, 35000, 40000, 75000, 500000, 5000000],
+            "marriedJointly":   [0, 20000, 50000, 70000, 80000, 150000, 500000, 5000000] 
+        }    
+    },
+    "New Mexico": {
+        "rates":                [1.7, 3.2, 4.7, 4.9],
+        "brackets": {
+            "single":           [0, 5500, 11000, 16000],
+            "marriedJointly":   [0, 8000, 16000, 24000] 
+        }    
+    },
+    "New York": {
+        "rates":                [4, 4.5, 5.25, 5.9, 6.21, 6.49, 6.85, 8.82],
+        "brackets": {
+            "single":           [0, 8500, 11700, 13900, 21400, 80650, 215400, 1077550],
+            "marriedJointly":   [0, 17150, 23600, 27900, 43000, 161550, 323200, 2155350] 
+        }    
+    },
+    "North Carolina": {
+        "rates":                [5.25],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "North Dakota": {
+        "rates":                [1.1, 2.04, 2.27, 2.64, 2.9],
+        "brackets": {
+            "single":           [0, 39450, 95500, 199250, 433200],
+            "marriedJointly":   [0, 65900, 159200, 242550, 433200] 
+        }    
+    },
+    "Ohio": {
+        "rates":                [1.98, 2.75, 2.97, 3.47, 3.96, 4.6, 5],
+        "brackets": {
+            "single":           [10850, 16300, 21750, 43450, 86900, 108700, 217400],
+            "marriedJointly":   [10850, 16300, 21750, 43450, 86900, 108700, 217400] 
+        }    
+    },
+    "Oklahoma": {
+        "rates":                [2.5, 1, 2, 3, 4, 5],
+        "brackets": {
+            "single":           [0, 1000, 2500, 3750, 4900, 7200],
+            "marriedJointly":   [0, 2000, 5000, 7500, 9800, 12200] 
+        }    
+    },
     "Oregon": {
         "abbreviation": "OR",
         "rates": [5, 7, 9, 9.9],
@@ -15,5 +235,75 @@
             "single":           [0, 3450, 8700, 125000],
             "marriedJointly":   [0, 7100, 17800, 250000]
         }      
+    },
+    "Pennsylvania": {
+        "rates":                [3.07],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Rhode Island": {
+        "rates":                [3.75, 4.75, 5.99],
+        "brackets": {
+            "single":           [0, 64050, 145600],
+            "marriedJointly":   [0, 64050, 145600] 
+        }    
+    },
+    "South Carolina": {
+        "rates":                [1.1, 3, 4, 5, 6, 7],
+        "brackets": {
+            "single":           [0, 2450, 4900, 7350, 9800, 12250],
+            "marriedJointly":   [0, 2450, 4900, 7350, 9800, 12250] 
+        }    
+    },
+    "Tennessee": {
+        "rates":                [2],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Utah": {
+        "rates":                [4.95],
+        "brackets": {
+            "single":           [0],
+            "marriedJointly":   [0] 
+        }    
+    },
+    "Vermont": {
+        "rates":                [3.35, 6.6, 7.6, 8.75],
+        "brackets": {
+            "single":           [0, 39600, 95900, 200100],
+            "marriedJointly":   [0, 66150, 159850, 243650] 
+        }    
+    },
+    "Virginia": {
+        "rates":                [2, 3, 5, 5.75],
+        "brackets": {
+            "single":           [0, 3000, 5000, 17000],
+            "marriedJointly":   [0, 3000, 5000, 17000] 
+        }    
+    },
+    "West Virginia": {
+        "rates":                [3, 4, 4.5, 6, 6.5],
+        "brackets": {
+            "single":           [0, 10000, 25000, 40000, 60000],
+            "marriedJointly":   [0, 10000, 25000, 40000, 60000] 
+        }    
+    },
+    "Wisconsin": {
+        "rates":                [4, 5.84, 6.27, 7.65],
+        "brackets": {
+            "single":           [0, 11760, 23520, 258950],
+            "marriedJointly":   [15680, 31360, 345270] 
+        }    
+    },
+    "Washington, D.C.": {
+        "rates":                [4, 6, 6.5, 8.5, 8.75, 8.95],
+        "brackets": {
+            "single":           [0, 10000, 40000, 60000, 350000, 1000000],
+            "marriedJointly":   [0, 10000, 40000, 60000, 350000, 1000000]
+        }    
     }
 }
