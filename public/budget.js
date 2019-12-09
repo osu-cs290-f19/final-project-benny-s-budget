@@ -34,8 +34,24 @@ function calculateIncomeTax(state, initialIncome, filingStatus) {
             }
             console.log('   incomeTax: $' + incomeTax);
         }
-    } else {
-
+    } else if (filingStatus == 'marriedJointly') {
+        for (var i = 0; incomeTaxData[state].brackets.marriedJointly[i] <= initialIncome; i++) {
+            var currentBracket = incomeTaxData[state].brackets.marriedJointly[i];
+            console.log(' = currentBracket: $' + currentBracket);
+            
+            var nextBracket = incomeTaxData[state].brackets.marriedJointly[i + 1];
+            console.log('   nextBracket: $' + nextBracket);
+            
+            var rate = incomeTaxData[state].rates[i] / 100;
+            console.log('   rate: ' + rate);
+    
+            if (nextBracket && initialIncome > nextBracket) {
+                incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
+            } else {
+                incomeTax = incomeTax + ((initialIncome - currentBracket) * rate);
+            }
+            console.log('   incomeTax: $' + incomeTax);
+        }
     }
     console.log('');
     
@@ -109,3 +125,27 @@ var textBooks;              // approximate $100 per class if you don't know
 var emergenyFund;
 var savings;
 var other;
+
+var monthlyExpenses = housing + food + medicine + healthInsurance + 
+                      houseSupplies + clothing + laundry +
+                      electricity + water + garbageDisposal + internet + phone + creditCardPayments + 
+                      carPayment + carInsurance + carRepairs + fuel + transportation + travel +
+                      entertainment + emergenyFund + savings + other;
+
+if (hasChild) {
+    monthlyExpenses = monthlyExpenses + childCare;
+}
+
+if (isStudent) {
+    monthlyExpenses = monthlyExpenses + tuition + schoolFees + textBooks;
+}
+
+if (hasStudnetLoans) {
+    monthlyExpenses = monthlyExpenses + studentLoanMonthlyRepayment;
+}
+
+for (var i = 0; i < subscriptions.length; i++) {
+    monthlyExpenses = monthlyExpenses + subscriptions[i];
+}
+
+var annualExpenses = monthlyExpenses * 12;
