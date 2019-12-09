@@ -1,10 +1,12 @@
 {
   "name": "final-project-benny-s-budget",
   "version": "1.0.0",
-  "description": "CS290 Final Project at Oregon State University; a website to assist with budgeting ",
+  "description": "CS290 Final Project at Oregon State University; a website to assist with budgeting",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
