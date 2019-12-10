@@ -4,6 +4,8 @@ var expressHandlebars = require('express-handlebars');
 var app = express();
 var port = process.env.PORT || 3000;
 
+// var prompts = require('./prompts')
+
 app.engine('handlebars', expressHandlebars( { defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
