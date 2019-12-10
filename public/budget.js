@@ -151,9 +151,9 @@ for (var i = 0; i < subscriptions.length; i++) {
 var annualExpenses = monthlyExpenses * 12;
 
 
+
 // MODAL
-var contentWrapper = document.getElementById('content-wrapper');
-var contentColumns = document.getElementsByClassName('content');
+var modalBackdrop = document.getElementById('modal-backdrop');
 var modal = document.getElementById('prompt-modal');
 
 var startButton = document.getElementById('start-button');
@@ -162,12 +162,7 @@ startButton.addEventListener('click', function(event) {
     console.log('Start button was clicked');
 });
  
-console.log('Hello there');
-
 function toggleModal() {
     modal.classList.toggle('hidden');
-    contentWrapper.classList.toggle('shaded');
-    for (var i = 0; i < contentColumns.length; i++) {
-        contentColumns[i].classList.toggle('shaded');
-    }
+    modalBackdrop.classList.toggle('hidden');
 }

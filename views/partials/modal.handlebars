@@ -1,27 +1,42 @@
-<div id="modal-back-container">
-    <div id='modal-backdrop' class='hidden'></div>
+{{!-- <div id="modal-backdrop-container"> --}}
+    <div id='modal-backdrop' class='hidden'></div>    
+
+    <div id='prompt-modal' class='hidden'>
+        <div class='modal-dialog'>
+            <div class="prompt">
+                <div class='modal-header'>
+                    <h3>Income</h3>
+                </div>
+
+                <div class='modal-body'>
+                
+                    <div class="modal-arrow-container">
+                        <img src="arrows.png" alt="Previous" class="arrow-button" id="modal-previous-button">
+                    </div>
+                    
+                    <div id="modal-prompts">
+                                            
+                        <div class='prompt-input-element'>
+                            <label for='income-input'>Annual Income</label>
+                            <input type='text' id='income-input'></input>
+                        </div>
+
+                        <div class='prompt-input-element'>
+                            <label for='housing-input'>Housing</label>
+                            <input type='text' id='housing-input'></input>
+                        </div>   
+
+                    </div>
+                    
+                    <div class="modal-arrow-container">
+                        <img src="arrows.png" alt="Continue" class="arrow-button" id="modal-continue-button">
+                    </div>
+
+                </div>
 
 
-<div id='prompt-modal' class='hidden'>
-    <div class='modal-dialog'>
 
-    <div class='modal-header'>
-        <h3>Income</h3>
-        {{!-- <button type='button' id='modal-close' class='modal-hide-button'>&times;</button> --}}
+            </div>
+        </div>
     </div>
-
-    <div class='modal-body'>
-        <div class='prompt-input-element'>
-            <label for='income-text-input'>Annual Income</label>
-            <input type='text' id='income-text-input'></input>
-        </div>  
-    </div>
-
-    <div class='modal-footer'>
-        <button type='button' id='modal-previous' class='action-button'>Previous</button>
-        <button type='button' id='modal-continue' class='action-button'>Continue</button>
-    </div>
-
-    </div>
-</div>
-</div>
+{{!-- </div> --}}
