@@ -11,8 +11,8 @@ body {
 
 a {
 	text-decoration: none;
+	color: #33ce3b;
 }
-
 
 /* Header */
 
@@ -39,7 +39,6 @@ header img {
  	color: #f2fffd;
 }
 
-
 /* Body */
 
 #content-wrapper {
@@ -53,7 +52,6 @@ header img {
 	flex-flow: column;
 	background-color: #edede8;
 	width: 100%;
-	height: 55vh;
 	margin: 5vh 0;
 	padding: 20px;
 	border: solid 6px #ededfc;
@@ -61,7 +59,7 @@ header img {
 }
 
 #about-content {
-	margin: 5vh 5vw;
+	margin: 5vh 20vw;
 }
 
 #content-left, #content-right {
@@ -79,20 +77,19 @@ p {
 
 #budget-button {
 	background-color: green;
-	border-radius: 3%;
+	border-radius: 10px;
 	border: none;
 	color: white;
 	font-size: 1.25rem;
-	height: 5vh;
-	width: 50%;
-	margin: 1vh 0;
+	height: 60px;
+	width: 300px;
+	margin: 20px;
 	align-self: center;
 }
 
 button:hover {
 	cursor: pointer;
 }
-
 
 /* Footer */
 
@@ -134,7 +131,6 @@ button:hover {
 	border-radius: 15px;
 	z-index: 1010;
 }
-
 
 .modal-header {
 	padding: 15px 25px;
@@ -204,4 +200,11 @@ background-color: #fff;
 
 #modal-cancel:hover {
 background-color: #eee;
+}
+
+
+
+/* 404 PAGE */
+#invalid-page-content {
+	margin: 5vh 10vw;
 }
