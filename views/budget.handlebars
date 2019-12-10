@@ -5,13 +5,159 @@
     {{>modal}}
 
     <section class='content' id='content-left'>
-        Section 1
+        <h2>Monthly Income & Expenses</h2>
+
+        <h3>Income</h3>
+        <ul>
+            <li class='prompt-input-element'>
+                <label for='housing-input'>Pretaxed Annual Income:</label>
+                <input type='text' id='housing-input'></input>
+            </li>
+
+            <li class='prompt-input-element'>
+                <label for='housing-input'>Other:</label>
+                <input type='text' id='housing-input'></input>
+            </li>
+        </ul>
+
+        <h3>Tax Info</h3>
+        <ul>
+            <li class="prompt-input-element">
+                <label for="prompt-filing-status-input">State:</label>
+                    <select id="filter-city" class="filter-input" name="filter-city">
+                        <option selected value="">Oregon</option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Connecticut</option>
+                        <option>Delaware</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Hawaii</option>
+                        <option>Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Maryland</option>
+                        <option>Massachusetts</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Pennsylvania</option>
+                        <option>Rhode sland</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virginia</option>
+                        <option>Washington</option>
+                        <option>West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option>Wyoming</option>
+                    </select>
+            </li>
+
+            <li class="prompt-input-element">
+                <label for="prompt-filing-status-input">Filing Status:</label>
+                    <select id="filter-city" class="filter-input" name="filter-city">
+                        <option selected value="">Single</option>
+                        <option>Married Filing Jointly</option>
+                        <option>Married Filing Separately</option>
+                    </select>
+            </li>
+
+
+        </ul>
+        
     </section>
 
     <section class='content' id='content-main'>
-        Section 2
+        <h2>
+            Results
+        </h2>
+
         <button id='start-button'>Start</button>
         
+        <h3>Monthly Expenses</h3>
+            <ul>
+                  
+
+                <ul>
+                    <li>Filing Status:</li>
+                    <li>State:</li>
+                </ul>
+                
+                <ul>
+                    <li>Rent/Mortgage:</li>
+                    <li>Food:</li>
+                    <li>Medicine:</li>
+                    <li>Health Insurance:</li>
+                </ul>
+                    
+                <ul>
+                    <li>House Supplies:</li>
+                    <li>Clothing:</li>
+                    <li>Laundry:</li>
+                </ul>
+
+                <ul>
+                    <li>Utilities (electricity, water, garbage):</li>
+                    <li>Internet:</li>
+                    <li>Phone:</li>
+                </ul>
+
+                <ul>
+                    <li>Car Payement:</li>
+                    <li>Car Insurance:</li>
+                    <li>Car Repairs (estimate $.50 per mile driven if you don't know):</li>
+                    <li>Fuel:</li>
+                    <li>Transportation (public transportation or bike maintenance):</li>
+                    <li>Vaction Travel:</li>
+                </ul>
+
+                <ul>
+                    <li>Entertainment (e.g. books, videogames, etc.):</li>
+                    <li>Subscriptions (e.g. gym membership, video streaming, etc.):</li>
+                </ul>
+
+                <ul>
+                    <li>Student Loan Monthly Payement:</li>
+                    <li>Tuition:</li>
+                    <li>Fees:</li>
+                    <li>Text Books:</li>
+                </ul>
+
+                <ul>
+                    <li>Credit Card Payements:</li>
+                    <li>Child Care:</li>
+                    <li>Emergency Fund:</li>
+                    <li>Savings:</li>
+                    <li>Other:</li>
+                </ul>
+
+            </ul>
+
     </section>
 
     <section class='content' id='content-right'>
