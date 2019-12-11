@@ -1,3 +1,5 @@
+/*--- Stylesheet ---*/
+/*-- Globals --*/
 html, body{
 	padding: 0;
 	margin:0;
@@ -18,6 +20,7 @@ a{
 	text-decoration: none;
 }
 
+/*-- Header --*/
 header{
 	background-color: #F8F8F8;
 	color: #7a7a7a;
@@ -42,6 +45,7 @@ header{
 		padding-top: 30px;
 	}
 
+/*-- Content --*/
 main {
 	padding: 5px 10em;
 	text-align: center;
@@ -79,6 +83,7 @@ main h3 {
 	background-color: rgb(224, 96, 4);
 }
 
+/*-- Footer --*/
 footer{
 	background-color: #F8F8F8;
 	color: #7a7a7a;
@@ -90,7 +95,7 @@ footer{
 	font-weight: normal;
 }
 
-/*Modal*/
+/*-- Modals --*/
 #modal-backdrop{
 	position:fixed;
 	top:0;

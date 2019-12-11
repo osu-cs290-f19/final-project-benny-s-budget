@@ -1,3 +1,32 @@
+// Budget page behavior
+document.addEventListener("DOMContentLoaded", function() {
+  //get modals
+  var modal = document.getElementsByClassName('modal-dialog');
+  //get buttons that open modals
+  var btn = document.getElementsByClassName('arrow-right');
+  //get buttons that close modals
+  var next = document.getElementsByClassName('modal-close')
+
+  //When window loads, set first modal to display
+  window.onload = function() {
+    modal[0].hidden = false;
+    modal[1].style.zIndex = 1011;
+    modal[0].style.zIndex = 1012;
+    modal[1].hidden = true;
+  }
+
+  //When next button is pressed, activate next modal
+  document.querySelector('.arrow-right').addEventListener('click', () => {
+    console.log("Button clicked");
+    modal[0].hidden = true;
+    modal[0].style.zIndex = 1011;
+    modal[1].hidden = false;
+    modal[1].style.zIndex = 1012;
+  });
+});
+
+
+
 // INCOME TAX
 var incomeTaxData = require('./incomeTaxData');
 
@@ -20,13 +49,13 @@ function calculateIncomeTax(state, initialIncome, filingStatus) {
         for (var i = 0; incomeTaxData[state].brackets.single[i] <= initialIncome; i++) {
             var currentBracket = incomeTaxData[state].brackets.single[i];
             console.log(' = currentBracket: $' + currentBracket);
-            
+
             var nextBracket = incomeTaxData[state].brackets.single[i + 1];
             console.log('   nextBracket: $' + nextBracket);
-            
+
             var rate = incomeTaxData[state].rates[i] / 100;
             console.log('   rate: ' + rate);
-    
+
             if (nextBracket && initialIncome > nextBracket) {
                 incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
             } else {
@@ -38,13 +67,13 @@ function calculateIncomeTax(state, initialIncome, filingStatus) {
         for (var i = 0; incomeTaxData[state].brackets.marriedJointly[i] <= initialIncome; i++) {
             var currentBracket = incomeTaxData[state].brackets.marriedJointly[i];
             console.log(' = currentBracket: $' + currentBracket);
-            
+
             var nextBracket = incomeTaxData[state].brackets.marriedJointly[i + 1];
             console.log('   nextBracket: $' + nextBracket);
-            
+
             var rate = incomeTaxData[state].rates[i] / 100;
             console.log('   rate: ' + rate);
-    
+
             if (nextBracket && initialIncome > nextBracket) {
                 incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
             } else {
@@ -54,7 +83,7 @@ function calculateIncomeTax(state, initialIncome, filingStatus) {
         }
     }
     console.log('');
-    
+
     return incomeTax;
 }
 
@@ -115,7 +144,7 @@ var subscriptions = [];     // gym membership, video streaming, etc.
 var isStudent;
 var hasStudnetLoans;
 var studentLoanTotal
-var studentLoanInterestRate; 
+var studentLoanInterestRate;
 var studentLoanRepaymentPeriod;     // desired payment deadline
 var studentLoanMonthlyRepayment;    // planned/desired monthly payments
 var tuition;
@@ -126,9 +155,9 @@ var emergenyFund;
 var savings;
 var other;
 
-var monthlyExpenses = housing + food + medicine + healthInsurance + 
+var monthlyExpenses = housing + food + medicine + healthInsurance +
                       houseSupplies + clothing + laundry +
-                      electricity + water + garbageDisposal + internet + phone + creditCardPayments + 
+                      electricity + water + garbageDisposal + internet + phone + creditCardPayments +
                       carPayment + carInsurance + carRepairs + fuel + transportation + travel +
                       entertainment + emergenyFund + savings + other;
 

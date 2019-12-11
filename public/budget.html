@@ -4,69 +4,85 @@
 	<head>
 	 <meta charset="utf-8">
     <title>Benny's Budget</title>
-   <link rel="stylesheet" href="tegdub.css">
-
+   <link rel="stylesheet" href="styles.css">
+	 <script src="budget.js"></script>
 	</head>
 
 	<body>
-<div id="page-container">	
-	<div id="content-wrap">
-	
+		<div id="page-container">
+			<div id="content-wrap">
+				<header>
+					<div class="header-image-container">
+						<img src="benny_v2.png" alt="Benny's Budget Logo">
+					</div>
+					<h1 class="header-text"><a href="#">Bennys Budget</a></h1>
+				</header>
+			</div><!-- content-wrap end -->
+
+			<main class="content">
+			</main>
+
+			<!-- MODALS -->
+			<div id="modal-backdrop"></div>
+			<div id="modal-window">
+				<div class="modal-dialog">
+					<div class="modal-header">
+						<h2>Budget Creator #1</h2>
+						<button type="button" id="modal-close">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="modal-arrows">
+							<div class = "arrow-left"></div>
+							<div class = "arrow-right">Next  &#9654;</div>
+						</div>
+						<div class="input-elemnt">
+							<label for="post-question">Question 1</label>
+							<input type="text" id="post-input">
+						</div>
+						<div class="input-elemnt">
+							<label for="post-question">Question 1</label>
+							<input type="text" id="post-input">
+						</div>
+						<div class="input-elemnt">
+							<label for="post-question">Question 1</label>
+							<input type="text" id="post-input">
+						</div>
+					</div>
+				</div> <!-- modal 1 end -->
 
 
+				<div class="modal-dialog">
+					<div class="modal-header">
+						<h2>Budget Creator #2</h2>
+						<button type="button" id="modal-close">&times;</button>
+					</div>
+					<div class="modal-body">
+						<div class="modal-arrows">
+							<div class = "arrow-left"></div>
+							<div class = "arrow-right">Next  &#9654;</div>
+						</div>
+						<div class="input-elemnt">
+							<label for="post-question">Question 1</label>
+							<input type="text" id="post-input">
+						</div>
+						<div class="input-elemnt">
+							<label for="post-question">Question 1</label>
+							<input type="text" id="post-input">
+						</div>
+						<div class="input-elemnt">
+							<label for="post-question">Question 1</label>
+							<input type="text" id="post-input">
+						</div>
+					</div>
+				</div> <!-- modal 2 end -->
 
-<header>
-	<a href="index.html">
-	<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/American_Beaver.jpg" alt="Benny's Budget Logo" class="budget-img">
-	</a>
-</header>
-<main class="content">
-	<div class="table">
-	
-		<div class="container">
-	</div>
-</div>
+
+			</div> <!-- modal container end -->
+		</div> <!-- page-container end -->
 
 
-</main>
-<div id="modal-backdrop" class="hidden"></div>
-<div id="modal-window" class="hidden">
-	<div class="modal-dialog">
-		<div class="modal-header">
-			<h3>tester</h3>
-			<button type="button" id="modal-close">&times;</button>
-		<div class = "arrow-left">
-		</div>
-		<div class = "arrow-right">
-		</div>
-		</div>
-
-		<div class="modal-body">
-			<div class="input-elemnt">
-				<label for=post-question">Question 1</label>
-				<input type="text" id="post-input">
-			</div>
-			<div class="input-elemnt">
-				<label for=post-question">Question 1</label>
-				<input type="text" id="post-input">
-			</div>
-			<div class="input-elemnt">
-				<label for=post-question">Question 1</label>
-				<input type="text" id="post-input">
-			</div>
-		</div>
-
-		<div class="modal-footer">
-			<button tytpe="button" id="modal-cancel" >Cancel</button>
-		</div>
-	</div>
-</div>
-
-</div>
-<footer id="footer">
-	<h1>Foot"</h1>
-</footer>
-</div>
+		<footer>
+			<h4>Benny's Budget - CS290 Fall Term 2019 Final - *names here*</h4>
+		</footer>
 	</body>
-
 </html>
