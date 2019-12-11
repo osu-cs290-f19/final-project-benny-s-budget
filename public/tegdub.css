@@ -58,7 +58,13 @@ a{
 	display:flex;
 	padding:15px;
 	justify-content:center;
+	
 
+}
+.center{
+	width:100%;
+	margin:20px 10rem;
+	display: inline-block;
 }
 #page-container{
 	position:relative;
@@ -108,6 +114,28 @@ min-height:900px;
 margin: 40px auto;
 background-color:#fff;
 border-radius:15px;
+border: 1px solid black;
+
+}
+
+#slide{
+position:absolute;
+left:-100px;
+-webkit-animation: slide 2s forwards;
+}
+.modal-dialog:hover #slide{
+	transition: 1s;
+	margin: 40px auto;
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0;}
+    100% {right:0;}
+}
+
+@keyframes slide {
+    100% { left: 0; }
+    100% {right:0;}
 }
 .modal-header{
 position:relative;
@@ -124,6 +152,7 @@ padding:0;
 cursor:pointer;
 }
 .modal-body{
+	justify-content:center;
 padding:20px;
 }
 .input-elemnt{
@@ -145,16 +174,17 @@ background-color:#fff;
 .arrow-left{
 	height:0;
 	width:0;
-border-top: 10px solid transparent;
-border-bottom: 10px solid transparent;
-border-right:10px solid blue;
-
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-right:10px solid blue;
+	margin-top:auto;
 }
 .arrow-right{
+	left: 0;
 	height:0;
 	width:0;
-border-top: 10px solid transparent;
-border-bottom: 10px solid transparent;
-border-left:10px solid blue;
-
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left:10px solid blue;
+	margin-top:auto;
 }
