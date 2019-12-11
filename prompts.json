@@ -52,7 +52,7 @@
      },
      "5": {
         "section": "Student Expenses",
-        "description": "how much you spend every three month (one trimester) on 1) tuition, 2) school fees, 3) text books (estimate $500 per class if you don't know), 4) and student loans if you're paying them off:",
+        "description": "how much you spend every three months (one trimester) on 1) tuition, 2) school fees, 3) text books (estimate $500 per class if you don't know), 4) and student loans if you're paying them off:",
         "last": "/budget/4",
         "next": "/budget/6",
         "prompts": [ {"header": "Tuition",              "input-field": true},
