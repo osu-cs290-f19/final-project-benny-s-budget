@@ -1,75 +1,75 @@
 // INCOME TAX
-var incomeTaxData = require('./incomeTaxData');
+// var incomeTaxData = require('./incomeTaxData');
 
-function getState() {
-    return 'Oregon';
-}
+// function getState() {
+//     return 'Oregon';
+// }
 
-function getIncome() {
-    return 120000;
-}
+// function getIncome() {
+//     return 120000;
+// }
 
-function getFilingStatus() {
-    return 'single';
-}
+// function getFilingStatus() {
+//     return 'single';
+// }
 
-function calculateIncomeTax(state, initialIncome, filingStatus) {
-    console.log('');
-    var incomeTax = 0;
-    if (filingStatus == 'single') {
-        for (var i = 0; incomeTaxData[state].brackets.single[i] <= initialIncome; i++) {
-            var currentBracket = incomeTaxData[state].brackets.single[i];
-            console.log(' = currentBracket: $' + currentBracket);
+// function calculateIncomeTax(state, initialIncome, filingStatus) {
+//     console.log('');
+//     var incomeTax = 0;
+//     if (filingStatus == 'single') {
+//         for (var i = 0; incomeTaxData[state].brackets.single[i] <= initialIncome; i++) {
+//             var currentBracket = incomeTaxData[state].brackets.single[i];
+//             console.log(' = currentBracket: $' + currentBracket);
             
-            var nextBracket = incomeTaxData[state].brackets.single[i + 1];
-            console.log('   nextBracket: $' + nextBracket);
+//             var nextBracket = incomeTaxData[state].brackets.single[i + 1];
+//             console.log('   nextBracket: $' + nextBracket);
             
-            var rate = incomeTaxData[state].rates[i] / 100;
-            console.log('   rate: ' + rate);
+//             var rate = incomeTaxData[state].rates[i] / 100;
+//             console.log('   rate: ' + rate);
     
-            if (nextBracket && initialIncome > nextBracket) {
-                incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
-            } else {
-                incomeTax = incomeTax + ((initialIncome - currentBracket) * rate);
-            }
-            console.log('   incomeTax: $' + incomeTax);
-        }
-    } else if (filingStatus == 'marriedJointly') {
-        for (var i = 0; incomeTaxData[state].brackets.marriedJointly[i] <= initialIncome; i++) {
-            var currentBracket = incomeTaxData[state].brackets.marriedJointly[i];
-            console.log(' = currentBracket: $' + currentBracket);
+//             if (nextBracket && initialIncome > nextBracket) {
+//                 incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
+//             } else {
+//                 incomeTax = incomeTax + ((initialIncome - currentBracket) * rate);
+//             }
+//             console.log('   incomeTax: $' + incomeTax);
+//         }
+//     } else if (filingStatus == 'marriedJointly') {
+//         for (var i = 0; incomeTaxData[state].brackets.marriedJointly[i] <= initialIncome; i++) {
+//             var currentBracket = incomeTaxData[state].brackets.marriedJointly[i];
+//             console.log(' = currentBracket: $' + currentBracket);
             
-            var nextBracket = incomeTaxData[state].brackets.marriedJointly[i + 1];
-            console.log('   nextBracket: $' + nextBracket);
+//             var nextBracket = incomeTaxData[state].brackets.marriedJointly[i + 1];
+//             console.log('   nextBracket: $' + nextBracket);
             
-            var rate = incomeTaxData[state].rates[i] / 100;
-            console.log('   rate: ' + rate);
+//             var rate = incomeTaxData[state].rates[i] / 100;
+//             console.log('   rate: ' + rate);
     
-            if (nextBracket && initialIncome > nextBracket) {
-                incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
-            } else {
-                incomeTax = incomeTax + ((initialIncome - currentBracket) * rate);
-            }
-            console.log('   incomeTax: $' + incomeTax);
-        }
-    }
-    console.log('');
+//             if (nextBracket && initialIncome > nextBracket) {
+//                 incomeTax = incomeTax + ((nextBracket - currentBracket - 1) * rate);
+//             } else {
+//                 incomeTax = incomeTax + ((initialIncome - currentBracket) * rate);
+//             }
+//             console.log('   incomeTax: $' + incomeTax);
+//         }
+//     }
+//     console.log('');
     
-    return incomeTax;
-}
+//     return incomeTax;
+// }
 
-var state = getState();
+// var state = getState();
 
-var initialIncome = getIncome();
-console.log('== Initial Income: ' + initialIncome);
+// var initialIncome = getIncome();
+// console.log('== Initial Income: ' + initialIncome);
 
-var filingStatus = getFilingStatus();
+// var filingStatus = getFilingStatus();
 
-var stateIncomeTax = calculateIncomeTax(state, initialIncome, filingStatus);
-console.log('== Total State Income Tax for ' + state + ': $' + stateIncomeTax);
+// var stateIncomeTax = calculateIncomeTax(state, initialIncome, filingStatus);
+// console.log('== Total State Income Tax for ' + state + ': $' + stateIncomeTax);
 
-var federalIncomeTax = calculateIncomeTax('federal', initialIncome, filingStatus);
-console.log('== Total Federal Income Tax: $' + federalIncomeTax);
+// var federalIncomeTax = calculateIncomeTax('federal', initialIncome, filingStatus);
+// console.log('== Total Federal Income Tax: $' + federalIncomeTax);
 
 
 // INCOME
@@ -149,3 +149,20 @@ for (var i = 0; i < subscriptions.length; i++) {
 }
 
 var annualExpenses = monthlyExpenses * 12;
+
+
+
+// MODAL
+var modalBackdrop = document.getElementById('modal-backdrop');
+var modal = document.getElementById('prompt-modal');
+
+var startButton = document.getElementById('start-button');
+startButton.addEventListener('click', function(event) {
+    toggleModal();
+    console.log('Start button was clicked');
+});
+ 
+function toggleModal() {
+    modal.classList.toggle('hidden');
+    modalBackdrop.classList.toggle('hidden');
+}

@@ -22,8 +22,6 @@ Templating
         budget.handlebars
 
 Client-Side JavaScript
-    index.js
-        Button requests budget.handlebars from the server
     budget.js
         Accesses user input for monthly expenses and stores the responses as variables
         Uses https://github.com/daneden/animate.css to slide page when user clicks the arrows (npm install --save animate.css
