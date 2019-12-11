@@ -173,7 +173,8 @@ font-size: 28px;
 .modal-desc p {
 	margin: 0;
 }
-/* Body & Prompts */
+
+/* Modal Body & Prompts */
 
 .modal-body {
 	align-items: center;
@@ -221,4 +222,12 @@ background-color: #eee;
 /* 404 PAGE */
 #invalid-page-content {
 	margin: 5vh 10vw;
+}
+
+
+
+/* PIE CHART from canvasJS */
+#chartContainer {
+	height: 370px; 
+	width: 100%;
 }
