@@ -1,35 +1,103 @@
 {{!-- <div id="modal-backdrop-container"> --}}
-    <div id='modal-backdrop' class='hidden animated fadeIn'></div>    
+    <div id='modal-backdrop' class='animated fadeIn'></div>    
 
-    <div id='prompt-modal' class='hidden'>
+    <div id='prompt-modal'>
         <div class='modal-dialog animated fadeInRight'>
             <div class="prompt">
                 <div class='modal-header'>
-                    <h3>Income</h3>
+                    <h3>{{section}}</h3>
                 </div>
-
+                <p>
+                    Please enter {{description}}.
+                </p>
                 <div class='modal-body'>
                 
                     <div class="modal-arrow-container">
-                        <img src="arrows.png" alt="Previous" class="arrow-button" id="modal-previous-button">
+                        <img src="/arrows.png" alt="Previous" href="{{last}}" class="arrow-button" id="modal-previous-button">
                     </div>
                     
                     <div id="modal-prompts">
-                                            
-                        <div class='prompt-input-element'>
-                            <label for='income-input'>Annual Income</label>
-                            <input type='text' id='income-input'></input>
-                        </div>
 
-                        <div class='prompt-input-element'>
-                            <label for='housing-input'>Housing</label>
-                            <input type='text' id='housing-input'></input>
-                        </div>   
+                    {{#each prompts}}
+                        {{#if input-field}}
+                            <div class='prompt-input-element'>
+                                <label for='prompt-input'>{{header}}</label>
+                                <input type='text' id='prompt-input'></input>
+                            </div>
+                        {{else}}
+                            {{#if state}}
+                                <div class="prompt-input-element">
+                                    <label for="state-input">State:</label>
+                                        <select id="state-input" class="prompt-input" name="state-input">
+                                            <option selected value="">Oregon</option>
+                                            <option>Alabama</option>
+                                            <option>Alaska</option>
+                                            <option>Arizona</option>
+                                            <option>Arkansas</option>
+                                            <option>California</option>
+                                            <option>Colorado</option>
+                                            <option>Connecticut</option>
+                                            <option>Delaware</option>
+                                            <option>Florida</option>
+                                            <option>Georgia</option>
+                                            <option>Hawaii</option>
+                                            <option>Idaho</option>
+                                            <option>Illinois</option>
+                                            <option>Indiana</option>
+                                            <option>Iowa</option>
+                                            <option>Kansas</option>
+                                            <option>Kentucky</option>
+                                            <option>Louisiana</option>
+                                            <option>Maine</option>
+                                            <option>Maryland</option>
+                                            <option>Massachusetts</option>
+                                            <option>Michigan</option>
+                                            <option>Minnesota</option>
+                                            <option>Mississippi</option>
+                                            <option>Missouri</option>
+                                            <option>Montana</option>
+                                            <option>Nebraska</option>
+                                            <option>Nevada</option>
+                                            <option>New Hampshire</option>
+                                            <option>New Jersey</option>
+                                            <option>New Mexico</option>
+                                            <option>New York</option>
+                                            <option>North Carolina</option>
+                                            <option>North Dakota</option>
+                                            <option>Ohio</option>
+                                            <option>Oklahoma</option>
+                                            <option>Pennsylvania</option>
+                                            <option>Rhode sland</option>
+                                            <option>South Carolina</option>
+                                            <option>South Dakota</option>
+                                            <option>Tennessee</option>
+                                            <option>Texas</option>
+                                            <option>Utah</option>
+                                            <option>Vermont</option>
+                                            <option>Virginia</option>
+                                            <option>Washington</option>
+                                            <option>West Virginia</option>
+                                            <option>Wisconsin</option>
+                                            <option>Wyoming</option>
+                                        </select>
+                                </div>
+                            {{else}}
+                                <div class="prompt-input-element">
+                                    <label for="filing-status-input">Filing Status:</label>
+                                        <select id="filing-status-input" class="prompt-input" name="filing-status-input">
+                                            <option selected value="">Single</option>
+                                            <option>Married Filing Jointly</option>
+                                            <option>Married Filing Separately</option>
+                                        </select>
+                                </div>
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
 
                     </div>
                     
                     <div class="modal-arrow-container">
-                        <img src="arrows.png" alt="Continue" class="arrow-button" id="modal-continue-button">
+                        <img src="/arrows.png" alt="Continue" href="{{next}}" class="arrow-button" id="modal-continue-button">
                     </div>
 
                 </div>
