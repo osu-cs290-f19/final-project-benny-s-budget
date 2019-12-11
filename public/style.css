@@ -41,7 +41,7 @@ header img {
 
 /* Body */
 
-#content-wrapper {
+#content-wrapper, #results-content-wrapper {
 	display: flex;
 	justify-content: space-around;
 }
@@ -60,10 +60,6 @@ header img {
 
 #about-content {
 	margin: 5vh 20vw;
-}
-
-#content-left, #content-right {
-	width: 33vw;
 }
 
 h2, h3 {
@@ -104,10 +100,6 @@ button:hover {
 
 /* MODAL */
 
-.hidden {
-	display: none;
-}
-
 #modal-backdrop {
 	position: fixed;
 	top: 0;
@@ -141,12 +133,16 @@ button:hover {
 	color: white;
 }
 
-/* .modal-header h3 {
-margin: 0;
-font-size: 28px;
-} */
+.modal-desc {
+	background-color: white;
+	padding: 15px;
+	border-bottom: 1px solid #edede8;
+}
+.modal-desc p {
+	margin: 0;
+}
 
-/* Arrows */
+/* Modal - Arrows */
 
 .arrow-button {
 	width: 50px;
@@ -165,16 +161,7 @@ font-size: 28px;
 	filter: invert(17%) sepia(69%) saturate(6685%) hue-rotate(3deg) brightness(97%) contrast(127%);
 }
 
-.modal-desc {
-	background-color: white;
-	padding: 15px;
-	border-bottom: 1px solid #edede8;
-}
-.modal-desc p {
-	margin: 0;
-}
-
-/* Modal Body & Prompts */
+/* Modal - Body & Prompts */
 
 .modal-body {
 	align-items: center;
@@ -208,15 +195,6 @@ font-size: 20px;
 border: 1px solid #aaa;
 }
 
-#modal-cancel {
-color: #333;
-background-color: #fff;
-}
-
-#modal-cancel:hover {
-background-color: #eee;
-}
-
 
 
 /* 404 PAGE */
@@ -225,9 +203,56 @@ background-color: #eee;
 }
 
 
+/* REULTS PAGE */
+#result-description-and-chart-container {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 30px;
+}
+
+#result-description-and-chart-container p {
+	max-width: 50vw;
+	margin: 0 30px;
+	font-size: 1.25rem;
+}
+
+#results-container {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	
+}
+
+.prompt-result-section {
+	margin: 10px;
+	flex: 0 0 33%;
+	max-width: 500px;
+}
+
+.results-header {
+	text-align: center;
+}
+
+#results-page h3 {
+	font-size: 1.3rem;
+	color: #29ac30;
+	margin: 30px 0 0 0;
+}
+
+#results-page label {
+	font-size: 1rem;	
+}
+
+.label-subtext {
+	font-size: .8rem;
+}
+
 
 /* PIE CHART from canvasJS */
 #chartContainer {
-	height: 370px; 
+	min-height: 350px;
+	min-width: 300px; 
+	max-width: 700px;
 	width: 100%;
+	height: 100%;
 }
