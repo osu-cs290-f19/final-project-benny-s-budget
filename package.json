@@ -4,6 +4,7 @@
   "description": "CS290 Final Project at Oregon State University; a website to assist with budgeting",
   "main": "server.js",
   "dependencies": {
+    "animate.css": "^3.7.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "handlebars": "^4.5.3"
