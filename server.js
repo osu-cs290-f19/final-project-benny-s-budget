@@ -5,6 +5,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 var prompts = require('./prompts')
+var promptsLength = 6;
 
 app.engine('handlebars', expressHandlebars( { defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -20,7 +21,8 @@ app.get('/budget', function(req, res, next) {
 });
 
 app.get('/budget/:promptNumber', function(req, res, next) {
-    if (req.params.promptNumber >= 1 && req.params.promptNumber <= prompts.length) {
+    var promptNumber = req.params.promptNumber;
+    if (1 <= promptNumber <= promptsLength) {
         res.status(200).render('./partials/modal', prompts[req.params.promptNumber]);
     } else {
         next();
