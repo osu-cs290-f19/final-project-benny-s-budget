@@ -1,5 +1,5 @@
 {{!-- <div id="modal-backdrop-container"> --}}
-    <div id='modal-backdrop' class='animated fadeIn'></div>
+    <div id='modal-backdrop'></div>
 
     <div id='prompt-modal'>
         <div class='modal-dialog animated fadeInRight'>
@@ -23,14 +23,14 @@
                     {{#each prompts}}
                         {{#if input-field}}
                             <div class='prompt-input-element'>
-                                <label for='prompt-input'>{{header}}</label>
-                                <input type='text' class='prompt-input'></input>
+                                <label for='{{id}}-input'>{{header}}</label>
+                                <input type='text' id='{{id}}-input' class='prompt-input'></input>
                             </div>
                         {{else}}
                             {{#if state}}
                                 <div class="prompt-input-element">
-                                    <label for="state-input">State:</label>
-                                        <select id="state-input" class="prompt-input drop-down" name="state-input">
+                                    <label for="{{id}}-input">State:</label>
+                                        <select id="{{id}}-input" class="prompt-input drop-down" name="{{id}}-input">
                                             <option selected value="Oregon">Oregon</option>
                                             <option>Alabama</option>
                                             <option>Alaska</option>
@@ -85,8 +85,8 @@
                                 </div>
                             {{else}}
                                 <div class="prompt-input-element">
-                                    <label for="filing-status-input">Filing Status:</label>
-                                        <select id="filing-status-input" class="prompt-input drop-down" name="filing-status-input">
+                                    <label for="{{id}}-input">Filing Status:</label>
+                                        <select id="{{id}}-input" class="prompt-input drop-down" name="{{id}}-input">
                                             <option selected value="Single">Single</option>
                                             <option>Married Filing Jointly</option>
                                             <option>Married Filing Separately</option>
