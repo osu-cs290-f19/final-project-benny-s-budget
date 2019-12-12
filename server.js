@@ -1,11 +1,11 @@
-var express = require('express');
-var expressHandlebars = require('express-handlebars');
+const express = require('express');
+const expressHandlebars = require('express-handlebars');
 
 var app = express();
 var port = process.env.PORT || 3000;
 
-var prompts = require('./prompts')
-var promptsLength = 6;
+const prompts = require('./prompts')
+const promptsLength = 6;
 
 app.engine('handlebars', expressHandlebars( { defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
