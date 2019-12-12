@@ -71,6 +71,9 @@
 // var federalIncomeTax = calculateIncomeTax('federal', initialIncome, filingStatus);
 // console.log('== Total Federal Income Tax: $' + federalIncomeTax);
 
+// var resultsSection = document.getElementById('results-section');
+
+
 
 // INCOME
 var salaryOrHourly
@@ -149,3 +152,55 @@ for (var i = 0; i < subscriptions.length; i++) {
 }
 
 var annualExpenses = monthlyExpenses * 12;
+
+
+// PIE CHART w/ canvasJS
+
+window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        exportEnabled: true,
+        animationEnabled: true,
+        title:{
+            text: "Monthly Expenses"
+        },
+        legend:{
+            cursor: "pointer",
+            itemclick: explodePie
+        },
+        data: [{
+            type: "pie",
+            showInLegend: true,
+            toolTipContent: "{name}: <strong>{y}%</strong>",
+            indexLabel: "{name} - {y}%",
+            dataPoints: [
+                { y: 26, name: "Housing", exploded: true },
+                { y: 20, name: "Food" },
+                { y: 5,  name: "Health Insurance" },
+                { y: 3,  name: "Utilities" },
+                { y: 7,  name: "Internet" },
+                { y: 17, name: "Phone" },
+                { y: 22, name: "Lifestyle"},
+                { y: 26, name: "Transportation"},
+                { y: 26, name: "Tuition"},
+                { y: 26, name: "Student Fees"},
+                { y: 26, name: "Student Loans"},
+                { y: 26, name: "Emergency Fund"},
+                { y: 26, name: "Savings"},
+                { y: 26, name: "Investments"},
+                { y: 26, name: "Other"}
+            ]
+        }]
+    });
+    chart.render();
+}
+        
+function explodePie (e) {
+    if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+        e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+    } else {
+        e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+    }
+    e.chart.render();
+
+}

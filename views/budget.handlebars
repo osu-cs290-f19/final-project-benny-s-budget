@@ -1,255 +1,273 @@
+<script type="text/javascript" src="canvasjs.min.js"></script>
 <script src="budget.js" defer></script>
 
-<div id='content-wrapper' class="animated fadeInRight">
+<div id='results-content-wrapper' class="animated fadeInRight">
 
-    <section class='content' id='content-left'>
-        <h2>Monthly Income & Expenses</h2>
+    <section class='content' id='results-page'>
 
-        <h3>Income</h3>
-        <ul id="list-income">
-            <li class='prompt-input-element'>
-                <label for='income-input'>Pretaxed Annual Income:</label>
-                <input type='text' id='income-input'></input>
-            </li>
+        <h2 class="results-header">Results - Monthly Income & Expenses</h2>
 
-            <li class='prompt-input-element'>
-                <label for='other-income-input'>Other:</label>
-                <input type='text' id='other-income-input'></input>
-            </li>
-        </ul>
+        <div id="result-description-and-chart-container">
+            <div id="result-description-container">
+                <p>
+                    Congratulations! You made it to the end. 
+                    Hover over any of the slices of the pie to see what percent of your income you spend on it. 
+                    <br><br>
+                    You can download the graph to the right by clicking the top right of the image. 
+                </p>
+            </div>
+           
 
-        <h3>Tax Information</h3>
-        <ul id="list-tax-info">
-            <li class="prompt-input-element">
-                <label for="state-input">State:</label>
-                    <select id="state-input" class="prompt-input" name="state-input">
-                        <option selected value="">Oregon</option>
-                        <option>Alabama</option>
-                        <option>Alaska</option>
-                        <option>Arizona</option>
-                        <option>Arkansas</option>
-                        <option>California</option>
-                        <option>Colorado</option>
-                        <option>Connecticut</option>
-                        <option>Delaware</option>
-                        <option>Florida</option>
-                        <option>Georgia</option>
-                        <option>Hawaii</option>
-                        <option>Idaho</option>
-                        <option>Illinois</option>
-                        <option>Indiana</option>
-                        <option>Iowa</option>
-                        <option>Kansas</option>
-                        <option>Kentucky</option>
-                        <option>Louisiana</option>
-                        <option>Maine</option>
-                        <option>Maryland</option>
-                        <option>Massachusetts</option>
-                        <option>Michigan</option>
-                        <option>Minnesota</option>
-                        <option>Mississippi</option>
-                        <option>Missouri</option>
-                        <option>Montana</option>
-                        <option>Nebraska</option>
-                        <option>Nevada</option>
-                        <option>New Hampshire</option>
-                        <option>New Jersey</option>
-                        <option>New Mexico</option>
-                        <option>New York</option>
-                        <option>North Carolina</option>
-                        <option>North Dakota</option>
-                        <option>Ohio</option>
-                        <option>Oklahoma</option>
-                        <option>Pennsylvania</option>
-                        <option>Rhode sland</option>
-                        <option>South Carolina</option>
-                        <option>South Dakota</option>
-                        <option>Tennessee</option>
-                        <option>Texas</option>
-                        <option>Utah</option>
-                        <option>Vermont</option>
-                        <option>Virginia</option>
-                        <option>Washington</option>
-                        <option>West Virginia</option>
-                        <option>Wisconsin</option>
-                        <option>Wyoming</option>
-                    </select>
-            </li>
+            <div id="chartContainer"></div>
+        </div>
 
-            <li class="prompt-input-element">
-                <label for="filing-status-input">Filing Status:</label>
-                    <select id="filing-status-input" class="prompt-input" name="filing-status-input">
-                        <option selected value="">Single</option>
-                        <option>Married Filing Jointly</option>
-                        <option>Married Filing Separately</option>
-                    </select>
-            </li>
-        </ul>
 
-        <h3>Living Expenses</h3>
-        <ul id="list-living-expensses">
-            <li class='prompt-input-element'>
-                <label for='housing-input'>Rent/Mortgage:</label>
-                <input type='text' id='housing-input'></input>
-            </li>
+        <div id="results-container">
 
-            <li class='prompt-input-element'>
-                <label for='food-input'>Food:</label>
-                <input type='text' id='food-input'></input>
-            </li>
+            <div class="prompt-result-section">
+                <h3>Income</h3>
+                <ul id="list-income">
+                    <li class='prompt-input-element'>
+                        <label for='income-input'>Pretaxed Annual Income:</label>
+                        <input type='text' id='income-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='medicine-input'>Medicine:</label>
-                <input type='text' id='medicine-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='other-income-input'>Other:</label>
+                        <input type='text' id='other-income-input'></input>
+                    </li>
+                </ul>
 
-            <li class='prompt-input-element'>
-                <label for='health-insurance-input'>Health Insurance:</label>
-                <input type='text' id='health-insurance-input'></input>
-            </li>
+                                <h3>Tax Information</h3>
+                <ul id="list-tax-info">
+                    <li class="prompt-input-element">
+                        <label for="state-input">State:</label>
+                            <select id="state-input" class="prompt-input" name="state-input">
+                                <option selected value="">Oregon</option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>Idaho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option>Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option>Massachusetts</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode sland</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Utah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                            </select>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='utilities-input'>Utilities:</label>
-                <input type='text' id='utilities-input'></input>
-            </li>
+                    <li class="prompt-input-element">
+                        <label for="filing-status-input">Filing Status:</label>
+                            <select id="filing-status-input" class="prompt-input" name="filing-status-input">
+                                <option selected value="">Single</option>
+                                <option>Married Filing Jointly</option>
+                                <option>Married Filing Separately</option>
+                            </select>
+                    </li>
+                </ul>
+            </div>
 
-            <li class='prompt-input-element'>
-                <label for='internet-input'>Internet:</label>
-                <input type='text' id='internet-input'></input>
-            </li>
-            
-            <li class='prompt-input-element'>
-                <label for='phone-input'>Phone:</label>
-                <input type='text' id='phone-input'></input>
-            </li>
-        </ul>
+            <div class="prompt-result-section">
+                <h3>Living Expenses</h3>
+                <ul id="list-living-expensses">
+                    <li class='prompt-input-element'>
+                        <label for='housing-input'>Housing:</label>
+                        <input type='text' id='housing-input'></input>
+                    </li>
 
-        <h3>Lifestyle</h3>
-        <ul>
-            <li class='prompt-input-element'>
-                <label for='credit-card-payments-input'>Credit Card Payments:</label>
-                <input type='text' id='credit-card-payments-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='food-input'>Food:</label>
+                        <input type='text' id='food-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='housing-input'>House Supplies:</label>
-                <input type='text' id='house-supplies-input'></input>
-            </li>
-            
-            <li class='prompt-input-element'>
-                <label for='clotthing-input'>Clothing:</label>
-                <input type='text' id='clothing-input'></input>
-            </li>
-            
-            <li class='prompt-input-element'>
-                <label for='laundry-input'>Laundry:</label>
-                <input type='text' id='laundry-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='medicine-input'>Medicine:</label>
+                        <input type='text' id='medicine-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='recreation-input'>Recreation: <span class="label-subtext">(e.g. books, videogames, etc.)</span></label>
-                <input type='text' id='recreation-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='health-insurance-input'>Health Insurance:</label>
+                        <input type='text' id='health-insurance-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='subscriptions-input'>Subscriptions: <span class="label-subtext">(e.g. gym membership, video streaming, etc.)</span></label>
-                <input type='text' id='subscriptions-input'></input>
-            </li>
-        </ul>
+                    <li class='prompt-input-element'>
+                        <label for='utilities-input'>Utilities:</label>
+                        <input type='text' id='utilities-input'></input>
+                    </li>
 
-        <h3>Transportation</h3>
-        <ul>
-            <li class='prompt-input-element'>
-                <label for='car-payment-input'>Car Payment:</label>
-                <input type='text' id='car-payment-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='internet-input'>Internet:</label>
+                        <input type='text' id='internet-input'></input>
+                    </li>
+                    
+                    <li class='prompt-input-element'>
+                        <label for='phone-input'>Phone:</label>
+                        <input type='text' id='phone-input'></input>
+                    </li>
+                </ul>
+            </div>
 
-            <li class='prompt-input-element'>
-                <label for='car-insurance-input'>Car Insurance:</label>
-                <input type='text' id='car-insurance-input'></input>
-            </li>
+            <div class="prompt-result-section">
+                <h3>Lifestyle</h3>
+                <ul>
+                    <li class='prompt-input-element'>
+                        <label for='credit-card-payments-input'>Credit Card Payments:</label>
+                        <input type='text' id='credit-card-payments-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='car-repairs-input'>Car Repairs: <span class="label-subtext">(estimate $.50 per mile driven if you don't know)</span></label>
-                <input type='text' id='car-repairs-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='housing-input'>House Supplies:</label>
+                        <input type='text' id='house-supplies-input'></input>
+                    </li>
+                    
+                    <li class='prompt-input-element'>
+                        <label for='clotthing-input'>Clothing:</label>
+                        <input type='text' id='clothing-input'></input>
+                    </li>
+                    
+                    <li class='prompt-input-element'>
+                        <label for='laundry-input'>Laundry:</label>
+                        <input type='text' id='laundry-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='gas-input'>Gas: <span class="label-subtext">(estimate $0.15 per mile driven if you don't know)</span></label>
-                <input type='text' id='gas-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='recreation-input'>Recreation: <span class="label-subtext">(e.g. books, videogames, etc.)</span></label>
+                        <input type='text' id='recreation-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='public-transportation-input'>Public Transportation:</label>
-                <input type='text' id='public-transportation-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='subscriptions-input'>Subscriptions: <span class="label-subtext">(e.g. gym membership, video streaming, etc.)</span></label>
+                        <input type='text' id='subscriptions-input'></input>
+                    </li>
+                </ul>
+            </div>
 
-            <li class='prompt-input-element'>
-                <label for='vacation-input'>Vacation:</label>
-                <input type='text' id='vacation-input'></input>
-            </li>
-        </ul>
+            <div class="prompt-result-section">
+                <h3>Transportation</h3>
+                <ul>
+                    <li class='prompt-input-element'>
+                        <label for='car-payment-input'>Car Payment:</label>
+                        <input type='text' id='car-payment-input'></input>
+                    </li>
 
-        <h3>Student</h3>
-        <ul>
-            <li class='prompt-input-element'>
-                <label for='tuition-input'>Tuition:</label>
-                <input type='text' id='tuition-input'></input>
-            </li>
-            
-            <li class='prompt-input-element'>
-                <label for='fees-input'>Fees:</label>
-                <input type='text' id='fees-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='car-insurance-input'>Car Insurance:</label>
+                        <input type='text' id='car-insurance-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='text-books-input'>Text Books: <span class="label-subtext">(estimate $500 per class if you don't know)</span></label>
-                <input type='text' id='text-books-input'></input>
-            </li>
-        </ul>
+                    <li class='prompt-input-element'>
+                        <label for='car-repairs-input'>Car Repairs: <span class="label-subtext">(estimate $.50 per mile driven if you don't know)</span></label>
+                        <input type='text' id='car-repairs-input'></input>
+                    </li>
 
-        <h3>Other Expenses</h3>
-        <ul>
-            <li class='prompt-input-element'>
-                <label for='student-loan-input'>Student Loan Monthly Payment:</label>
-                <input type='text' id='student-loan-input'></input>
-            </li>
-            
-            <li class='prompt-input-element'>
-                <label for='child-care-input'>Child Care:</label>
-                <input type='text' id='child-care-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='gas-input'>Gas: <span class="label-subtext">(estimate $0.15 per mile driven if you don't know)</span></label>
+                        <input type='text' id='gas-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='emergency-fund-input'>Emergency Fund:</label>
-                <input type='text' id='emergency-fund-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='public-transportation-input'>Public Transportation:</label>
+                        <input type='text' id='public-transportation-input'></input>
+                    </li>
 
-            <li class='prompt-input-element'>
-                <label for='savings-input'>Savings:</label>
-                <input type='text' id='savings-input'></input>
-            </li>
+                    <li class='prompt-input-element'>
+                        <label for='vacation-input'>Vacation:</label>
+                        <input type='text' id='vacation-input'></input>
+                    </li>
+                </ul>
+            </div>
 
-            <li class='prompt-input-element'>
-                <label for='other-expenses-input'>Other:</label>
-                <input type='text' id='other-expenses-input'></input>
-            </li>
-        </ul>
+            <div class="prompt-result-section">
+                <h3>Student</h3>
+                <ul>
+                    <li class='prompt-input-element'>
+                        <label for='tuition-input'>Tuition:</label>
+                        <input type='text' id='tuition-input'></input>
+                    </li>
+                    
+                    <li class='prompt-input-element'>
+                        <label for='fees-input'>Fees:</label>
+                        <input type='text' id='fees-input'></input>
+                    </li>
 
+                    <li class='prompt-input-element'>
+                        <label for='text-books-input'>Text Books: <span class="label-subtext">(estimate $500 per class if you don't know)</span></label>
+                        <input type='text' id='text-books-input'></input>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="prompt-result-section">
+                <h3>Other Expenses</h3>
+                <ul>
+                    <li class='prompt-input-element'>
+                        <label for='student-loan-input'>Student Loan Monthly Payment:</label>
+                        <input type='text' id='student-loan-input'></input>
+                    </li>
+                    
+                    <li class='prompt-input-element'>
+                        <label for='child-care-input'>Child Care:</label>
+                        <input type='text' id='child-care-input'></input>
+                    </li>
+
+                    <li class='prompt-input-element'>
+                        <label for='emergency-fund-input'>Emergency Fund:</label>
+                        <input type='text' id='emergency-fund-input'></input>
+                    </li>
+
+                    <li class='prompt-input-element'>
+                        <label for='savings-input'>Savings:</label>
+                        <input type='text' id='savings-input'></input>
+                    </li>
+
+                    <li class='prompt-input-element'>
+                        <label for='other-expenses-input'>Other:</label>
+                        <input type='text' id='other-expenses-input'></input>
+                    </li>
+                </ul>
+            </div>
+        </div>
         
-    </section>
-
-    <section class='content' id='content-main'>
-        <h2>
-            Results
-        </h2>
-
-        <button id='start-button'>Start</button>
-
-    </section>
-
-    <section class='content' id='content-right'>
-        Section 3
     </section>
 
 </div>
