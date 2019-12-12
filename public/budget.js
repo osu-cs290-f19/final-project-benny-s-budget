@@ -163,6 +163,29 @@ if (!Number(url.split('/')[2])) {
 var urlNumber = Number(url.split('/')[2]);
 
 // MODAL
+
+function isValidInput(input, inputValue, promptNum, iteration) {
+    console.log(input, inputValue, promptNum, iteration);
+    console.log(Number(inputValue));
+    if (inputValue == '') {
+        return false;
+    }
+    else if (promptNum == 1) {
+        var dropDowns = document.getElementsByClassName('drop-down');
+        for (var i = 0; i < dropDowns.length; i++) {
+            if (dropDowns[i] == input) {
+                return true;
+            }
+        }
+    }
+    if (!Number(inputValue) && inputValue != 0) {
+        console.log("Oh no");
+        return false;
+    }
+
+    return true;
+}
+
 if (urlNumber) {
     var promptInputs = document.getElementsByClassName('prompt-input');
     console.log(promptInputs);
@@ -170,17 +193,19 @@ if (urlNumber) {
     var continueArrow = document.getElementById('modal-continue-button-container');
     continueArrow.addEventListener('click', function() {
         for (var i = 0; i < promptInputs.length; i++) {
-            if (promptInputs[i].value == '' || (urlNumber != 1 && typeof(Number(promptInputs[i].value)) != 'number')) {
-                alert("You must enter in all fields. If a field doesn't apply to you, enter 0.");
-                break;
+            if (isValidInput(promptInputs[i], promptInputs[i].value, urlNumber, i)) {
+                if (i == promptInputs.length - 1) {
+                    if (urlNumber != numberOfPrompts) {
+                        window.location = '/budget/' + (urlNumber + 1);
+                    }
+                    else {
+                        window.location = '/budget';
+                    }
+                }
             }
-            else if (i == promptInputs.length - 1) {
-                if (urlNumber != numberOfPrompts) {
-                    window.location = '/budget/' + (urlNumber + 1);
-                }
-                else {
-                    window.location = '/budget';
-                }
+            else {
+                alert("You must enter in all fields with a valid input. If a field doesn't apply to you, enter 0.");
+                break;
             }
         }  
     });
