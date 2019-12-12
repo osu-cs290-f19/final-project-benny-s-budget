@@ -1,5 +1,5 @@
 {{!-- <div id="modal-backdrop-container"> --}}
-    <div id='modal-backdrop' class='animated fadeIn'></div>
+    <div id='modal-backdrop'></div>
 
     <div id='prompt-modal'>
         <div class='modal-dialog animated fadeInRight'>
@@ -14,8 +14,8 @@
                 </div>
                 <div class='modal-body'>
 
-                    <div class="modal-arrow-container">
-                        <a href="{{last}}"><img src="/arrows.png" alt="Previous" class="arrow-button" id="modal-previous-button"></a>
+                    <div class="modal-arrow-container" id="modal-previous-button-container">
+                        <img src="/arrows.png" alt="Previous" class="arrow-button" id="modal-previous-button">
                     </div>
 
                     <div id="modal-prompts">
@@ -23,15 +23,15 @@
                     {{#each prompts}}
                         {{#if input-field}}
                             <div class='prompt-input-element'>
-                                <label for='prompt-input'>{{header}}</label>
-                                <input type='text' id='prompt-input'></input>
+                                <label for='{{id}}-input'>{{header}}</label>
+                                <input type='text' id='{{id}}-input' class='prompt-input'></input>
                             </div>
                         {{else}}
                             {{#if state}}
                                 <div class="prompt-input-element">
-                                    <label for="state-input">State:</label>
-                                        <select id="state-input" class="prompt-input" name="state-input">
-                                            <option selected value="">Oregon</option>
+                                    <label for="{{id}}-input">State:</label>
+                                        <select id="{{id}}-input" class="prompt-input drop-down" name="{{id}}-input">
+                                            <option selected value="Oregon">Oregon</option>
                                             <option>Alabama</option>
                                             <option>Alaska</option>
                                             <option>Arizona</option>
@@ -85,9 +85,9 @@
                                 </div>
                             {{else}}
                                 <div class="prompt-input-element">
-                                    <label for="filing-status-input">Filing Status:</label>
-                                        <select id="filing-status-input" class="prompt-input" name="filing-status-input">
-                                            <option selected value="">Single</option>
+                                    <label for="{{id}}-input">Filing Status:</label>
+                                        <select id="{{id}}-input" class="prompt-input drop-down" name="{{id}}-input">
+                                            <option selected value="Single">Single</option>
                                             <option>Married Filing Jointly</option>
                                             <option>Married Filing Separately</option>
                                         </select>
@@ -98,8 +98,8 @@
 
                     </div>
 
-                    <div class="modal-arrow-container">
-                        <a href="{{next}}"><img src="/arrows.png" alt="Continue" class="arrow-button" id="modal-continue-button"></a>
+                    <div class="modal-arrow-container" id="modal-continue-button-container">
+                            <img src="/arrows.png" alt="Continue" class="arrow-button" id="modal-continue-button">
                     </div>
 
                 </div>

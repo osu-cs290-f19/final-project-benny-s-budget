@@ -1,5 +1,4 @@
 <script type="text/javascript" src="canvasjs.min.js"></script>
-<script src="budget.js" defer></script>
 
 <div id='results-content-wrapper' class="animated fadeInRight">
 
@@ -22,7 +21,7 @@
         </div>
 
 
-        <div id="results-container">
+        {{!-- <div id="results-container">
 
             <div class="prompt-result-section">
                 <h3>Income</h3>
@@ -38,7 +37,7 @@
                     </li>
                 </ul>
 
-                                <h3>Tax Information</h3>
+                <h3>Tax Information</h3>
                 <ul id="list-tax-info">
                     <li class="prompt-input-element">
                         <label for="state-input">State:</label>
@@ -152,7 +151,7 @@
                 <ul>
                     <li class='prompt-input-element'>
                         <label for='credit-card-payments-input'>Credit Card Payments:</label>
-                        <input type='text' id='credit-card-payments-input'></input>
+                        <input type='text' id='credit-card-input'></input>
                     </li>
 
                     <li class='prompt-input-element'>
@@ -171,8 +170,8 @@
                     </li>
 
                     <li class='prompt-input-element'>
-                        <label for='recreation-input'>Recreation: <span class="label-subtext">(e.g. books, videogames, etc.)</span></label>
-                        <input type='text' id='recreation-input'></input>
+                        <label for='entertainment-input'>Entertainment: <span class="label-subtext">(e.g. books, videogames, etc.)</span></label>
+                        <input type='text' id='entertainment-input'></input>
                     </li>
 
                     <li class='prompt-input-element'>
@@ -211,8 +210,8 @@
                     </li>
 
                     <li class='prompt-input-element'>
-                        <label for='vacation-input'>Vacation:</label>
-                        <input type='text' id='vacation-input'></input>
+                        <label for='vacation-input'>Vacation Fund:</label>
+                        <input type='text' id='vacation-fund-input'></input>
                     </li>
                 </ul>
             </div>
@@ -222,17 +221,17 @@
                 <ul>
                     <li class='prompt-input-element'>
                         <label for='tuition-input'>Tuition:</label>
-                        <input type='text' id='tuition-input'></input>
+                        <input type='text' id='student-tuition-input'></input>
                     </li>
                     
                     <li class='prompt-input-element'>
                         <label for='fees-input'>Fees:</label>
-                        <input type='text' id='fees-input'></input>
+                        <input type='text' id='student-fees-input'></input>
                     </li>
 
                     <li class='prompt-input-element'>
                         <label for='text-books-input'>Text Books: <span class="label-subtext">(estimate $500 per class if you don't know)</span></label>
-                        <input type='text' id='text-books-input'></input>
+                        <input type='text' id='student-text-books-input'></input>
                     </li>
                 </ul>
             </div>
@@ -268,7 +267,7 @@
             </div>
         </div>
         
-    </section>
+    </section> --}}
 
 </div>
 

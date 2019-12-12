@@ -1,11 +1,11 @@
-var express = require('express');
-var expressHandlebars = require('express-handlebars');
+const express = require('express');
+const expressHandlebars = require('express-handlebars');
 
 var app = express();
 var port = process.env.PORT || 3000;
 
-var prompts = require('./prompts')
-var promptsLength = 6;
+const prompts = require('./prompts')
+const promptsLength = 6;
 
 app.engine('handlebars', expressHandlebars( { defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -22,7 +22,7 @@ app.get('/budget', function(req, res, next) {
 
 app.get('/budget/:promptNumber', function(req, res, next) {
     var promptNumber = req.params.promptNumber;
-    if (1 <= promptNumber <= promptsLength) {
+    if (1 <= promptNumber && promptNumber <= promptsLength) {
         res.status(200).render('./partials/modal', prompts[req.params.promptNumber]);
     } else {
         next();

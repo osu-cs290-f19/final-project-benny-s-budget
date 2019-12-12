@@ -2,75 +2,63 @@
     "1": {
         "section": "Income & Tax Information",
         "description": "1) your annual income from your job before it's taxed , 2) any money you regularly get from any other sources (such as money from investments or the government), and 3) your state and filing status for tax purposes:",
-        "last": "/",
-        "next": "/budget/2",
-        "prompts": [ {"header": "Annual Income($):",    "input-field": true},
-                     {"header": "Other Income($):",     "input-field": true},
-                     {"header": "State",            "input-field": false, "state": true},
-                     {"header": "Filing Status",    "input-field": false, "state": false}
+        "prompts": [ {"header": "Annual Income($):",  "id": "income",         "input-field": true},
+                     {"header": "Other Income($):",   "id": "other-income",   "input-field": true},
+                     {"header": "State",              "id": "state",          "input-field": false, "state": true},
+                     {"header": "Filing Status",      "id": "filing-status",  "input-field": false, "state": false}
                     ]
      },
      "2": {
         "section": "Living Expenses",
         "description": "how much you spend every month on 1) rent or your mortgage, 2) food, 3) medicine, 4) medicine, 5) health insurance, 6) utilities (electricity, water, gas, garbage disposal, etc.), 7) the internet, and 8) your phone plan:",
-        "last": "/budget/1",
-        "next": "/budget/3",
-        "prompts": [ {"header": "Housing",          "input-field": true},
-                     {"header": "Food",             "input-field": true},
-                     {"header": "Medicine",         "input-field": true},
-                     {"header": "Health Insurance", "input-field": true},
-                     {"header": "Utilities",        "input-field": true},
-                     {"header": "Internet",         "input-field": true},
-                     {"header": "Phone",            "input-field": true}
+        "prompts": [ {"header": "Housing",          "id": "housing",          "input-field": true},
+                     {"header": "Food",             "id": "food",             "input-field": true},
+                     {"header": "Medicine",         "id": "medicine",         "input-field": true},
+                     {"header": "Health Insurance", "id": "health-insurance", "input-field": true},
+                     {"header": "Utilities",        "id": "utilities",        "input-field": true},
+                     {"header": "Internet",         "id": "internet",         "input-field": true},
+                     {"header": "Phone",            "id": "phone",            "input-field": true}
                     ]
      },
      "3": {
         "section": "Lifestyle Expenses",
         "description": "how much you spend every month on 1) paying off your credit card debt, 2) house supplies (paper towels, toilet paper, etc.), 3) clothing, 4) laundry, 5) entertainment (books, videogames, movies, etc.), and 6) subscriptions (gym membership, video streaming service, etc.):",
-        "last": "/budget/2",
-        "next": "/budget/4",
-        "prompts": [ {"header": "Credit Card Payments", "input-field": true},
-                     {"header": "House Supplies",       "input-field": true},
-                     {"header": "Clothing",             "input-field": true},
-                     {"header": "Laundry",              "input-field": true},
-                     {"header": "Entertainment",        "input-field": true},
-                     {"header": "Subscriptions",        "input-field": true}
+        "prompts": [ {"header": "Credit Card Payments", "id": "credit-card",     "input-field": true},
+                     {"header": "House Supplies",       "id": "house-supplies",  "input-field": true},
+                     {"header": "Clothing",             "id": "clothing",        "input-field": true},
+                     {"header": "Laundry",              "id": "laundry",         "input-field": true},
+                     {"header": "Entertainment",        "id": "entertainment",   "input-field": true},
+                     {"header": "Subscriptions",        "id": "subscriptions",   "input-field": true}
                     ]
      },
      "4": {
         "section": "Transportation Expenses",
         "description": "how much you spend every month on 1) car payments, 2) car insurance, 3) car repairs (estimate $.50 per mile driven if you don't know), 4) gas (estimate $0.15 per mile driven if you don't know), 5) public transportation, and 6) saving for future vacations:",
-        "last": "/budget/3",
-        "next": "/budget/5",
-        "prompts": [ {"header": "Car Payment",              "input-field": true},
-                     {"header": "Car Insurance",            "input-field": true},
-                     {"header": "Car Repairs",              "input-field": true},
-                     {"header": "Gas",                      "input-field": true},
-                     {"header": "Public Transportation",    "input-field": true},
-                     {"header": "Vacation Fund",            "input-field": true}
+        "prompts": [ {"header": "Car Payment",              "id": "car-payment",             "input-field": true},
+                     {"header": "Car Insurance",            "id": "car-insurance",           "input-field": true},
+                     {"header": "Car Repairs",              "id": "car-repairs",             "input-field": true},
+                     {"header": "Gas",                      "id": "gas",                     "input-field": true},
+                     {"header": "Public Transportation",    "id": "public-transportation",   "input-field": true},
+                     {"header": "Vacation Fund",            "id": "vacation-fund",           "input-field": true}
                     ]
      },
      "5": {
         "section": "Student Expenses",
         "description": "how much you spend every three months (one trimester) on 1) tuition, 2) school fees, 3) text books (estimate $500 per class if you don't know), 4) and student loans if you're paying them off:",
-        "last": "/budget/4",
-        "next": "/budget/6",
-        "prompts": [ {"header": "Tuition",              "input-field": true},
-                     {"header": "Fees",                 "input-field": true},
-                     {"header": "Text Books",           "input-field": true},
-                     {"header": "Student Loan Payment", "input-field": true}
+        "prompts": [ {"header": "Tuition",              "id": "student-tuition",    "input-field": true},
+                     {"header": "Fees",                 "id": "student-fees",       "input-field": true},
+                     {"header": "Text Books",           "id": "student-text-books", "input-field": true},
+                     {"header": "Student Loan Payment", "id": "student-loan",       "input-field": true}
                     ]
      },
      "6": {
         "section": "Miscellaneous Expenses",
         "description": "how much you spend every month on 1) child care, 2) emergency funds. 3) savings, 4) investments, and 5) any other monthly expenses:",
-        "last": "/budget/5",
-        "next": "/budget",
-        "prompts": [ {"header": "Child Care",       "input-field": true},
-                     {"header": "Emergency Fund",   "input-field": true},
-                     {"header": "Savings",          "input-field": true},
-                     {"header": "Investments",      "input-field": true},
-                     {"header": "Other Expenses",   "input-field": true}
+        "prompts": [ {"header": "Child Care",       "id": "child-care",       "input-field": true},
+                     {"header": "Emergency Fund",   "id": "emergency-fund",   "input-field": true},
+                     {"header": "Savings",          "id": "savings",          "input-field": true},
+                     {"header": "Investments",      "id": "investments",      "input-field": true},
+                     {"header": "Other Expenses",   "id": "other-expenses",  "input-field": true}
                     ]
      }
 }
