@@ -1,4 +1,5 @@
 // INCOME TAX
+
 // var incomeTaxData = require('./incomeTaxData');
 
 // function getState() {
@@ -154,53 +155,95 @@ for (var i = 0; i < subscriptions.length; i++) {
 var annualExpenses = monthlyExpenses * 12;
 
 
-// PIE CHART w/ canvasJS
-
-window.onload = function () {
-
-    var chart = new CanvasJS.Chart("chartContainer", {
-        exportEnabled: true,
-        animationEnabled: true,
-        title:{
-            text: "Monthly Expenses"
-        },
-        legend:{
-            cursor: "pointer",
-            itemclick: explodePie
-        },
-        data: [{
-            type: "pie",
-            showInLegend: true,
-            toolTipContent: "{name}: <strong>{y}%</strong>",
-            indexLabel: "{name} - {y}%",
-            dataPoints: [
-                { y: 26, name: "Housing", exploded: true },
-                { y: 20, name: "Food" },
-                { y: 5,  name: "Health Insurance" },
-                { y: 3,  name: "Utilities" },
-                { y: 7,  name: "Internet" },
-                { y: 17, name: "Phone" },
-                { y: 22, name: "Lifestyle"},
-                { y: 26, name: "Transportation"},
-                { y: 26, name: "Tuition"},
-                { y: 26, name: "Student Fees"},
-                { y: 26, name: "Student Loans"},
-                { y: 26, name: "Emergency Fund"},
-                { y: 26, name: "Savings"},
-                { y: 26, name: "Investments"},
-                { y: 26, name: "Other"}
-            ]
-        }]
-    });
-    chart.render();
+const numberOfPrompts = 6;
+var url = window.location.href.toString().split(window.location.host)[1];
+if (!Number(url.split('/')[2])) {
+    url = '/' + url.split('/')[1];
 }
-        
-function explodePie (e) {
-    if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
-        e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-    } else {
-        e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
-    }
-    e.chart.render();
+var urlNumber = Number(url.split('/')[2]);
 
+// MODAL
+if (urlNumber) {
+    var promptInputs = document.getElementsByClassName('prompt-input');
+    console.log(promptInputs);
+
+    var continueArrow = document.getElementById('modal-continue-button-container');
+    continueArrow.addEventListener('click', function() {
+        for (var i = 0; i < promptInputs.length; i++) {
+            if (promptInputs[i].value == '' || (urlNumber != 1 && typeof(Number(promptInputs[i].value)) != 'number')) {
+                alert("You must enter in all fields. If a field doesn't apply to you, enter 0.");
+                break;
+            }
+            else if (i == promptInputs.length - 1) {
+                if (urlNumber != numberOfPrompts) {
+                    window.location = '/budget/' + (urlNumber + 1);
+                }
+                else {
+                    window.location = '/budget';
+                }
+            }
+        }  
+    });
+
+    var previousArrow = document.getElementById('modal-previous-button');
+    previousArrow.addEventListener('click', function() {
+        if (urlNumber != 1) {
+            window.location = '/budget/' + (urlNumber - 1);
+        }
+        else {
+            window.location = '/';
+        }
+    });
+}
+
+// PIE CHART
+else if (url == '/budget') {
+    window.onload = function () {
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title:{
+                text: "Monthly Expenses"
+            },
+            legend:{
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}%</strong>",
+                indexLabel: "{name} - {y}%",
+                dataPoints: [
+                    { y: 26, name: "Housing", exploded: true },
+                    { y: 20, name: "Food" },
+                    { y: 5,  name: "Health Insurance" },
+                    { y: 3,  name: "Utilities" },
+                    { y: 7,  name: "Internet" },
+                    { y: 17, name: "Phone" },
+                    { y: 22, name: "Lifestyle"},
+                    { y: 26, name: "Transportation"},
+                    { y: 26, name: "Tuition"},
+                    { y: 26, name: "Student Fees"},
+                    { y: 26, name: "Student Loans"},
+                    { y: 26, name: "Emergency Fund"},
+                    { y: 26, name: "Savings"},
+                    { y: 26, name: "Investments"},
+                    { y: 26, name: "Other"}
+                ]
+            }]
+        });
+        chart.render();
+    }
+            
+    function explodePie (e) {
+        if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+        } else {
+            e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+        }
+        e.chart.render();
+
+    }
 }
