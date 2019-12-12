@@ -75,86 +75,6 @@
 // var resultsSection = document.getElementById('results-section');
 
 
-
-// INCOME
-var salaryOrHourly
-var paySchedule;            // bi monthly, monthly, bi weekly, weekly
-
-var initialIncome;
-
-// MODIFIERS
-var filingStatus;           // for taxes
-var state;                  // for taxes
-
-// MONTHLY EXPENSES
-var housing;                // or var rent;
-var food;                   // groceries or eating out
-var medicine;
-var healthInsurance;
-
-var houseSupplies;          // cleaning, kitchen, etc.
-var clothing
-var laundry;
-
-var hasChild;
-var childCare;
-
-var electricity;            // could just lump as var utilities;
-var water;                  // or var sewage;
-var garbageDisposal;        // or var trash;
-var internet;
-var phone;
-var creditCardPayments
-
-var carPayment;
-var carInsurance;
-var carRepairs;             // estimate $.50 per mile driven
-var fuel;
-var transportation;         // busses or bike maintenance
-var travel;
-
-var entertainment;          // e.g. videogames
-var subscriptions = [];     // gym membership, video streaming, etc.
-
-var isStudent;
-var hasStudnetLoans;
-var studentLoanTotal
-var studentLoanInterestRate;
-var studentLoanRepaymentPeriod;     // desired payment deadline
-var studentLoanMonthlyRepayment;    // planned/desired monthly payments
-var tuition;
-var schoolFees;
-var textBooks;              // approximate $100 per class if you don't know
-
-var emergenyFund;
-var savings;
-var other;
-
-var monthlyExpenses = housing + food + medicine + healthInsurance +
-                      houseSupplies + clothing + laundry +
-                      electricity + water + garbageDisposal + internet + phone + creditCardPayments +
-                      carPayment + carInsurance + carRepairs + fuel + transportation + travel +
-                      entertainment + emergenyFund + savings + other;
-
-if (hasChild) {
-    monthlyExpenses = monthlyExpenses + childCare;
-}
-
-if (isStudent) {
-    monthlyExpenses = monthlyExpenses + tuition + schoolFees + textBooks;
-}
-
-if (hasStudnetLoans) {
-    monthlyExpenses = monthlyExpenses + studentLoanMonthlyRepayment;
-}
-
-for (var i = 0; i < subscriptions.length; i++) {
-    monthlyExpenses = monthlyExpenses + subscriptions[i];
-}
-
-var annualExpenses = monthlyExpenses * 12;
-
-
 const numberOfPrompts = 6;
 var url = window.location.href.toString().split(window.location.host)[1];
 if (!Number(url.split('/')[2])) {
@@ -164,9 +84,7 @@ var urlNumber = Number(url.split('/')[2]);
 
 // MODAL
 
-function isValidInput(input, inputValue, promptNum, iteration) {
-    console.log(input, inputValue, promptNum, iteration);
-    console.log(Number(inputValue));
+function isValidInput(input, inputValue, promptNum) {
     if (inputValue == '') {
         return false;
     }
@@ -179,7 +97,6 @@ function isValidInput(input, inputValue, promptNum, iteration) {
         }
     }
     if (!Number(inputValue) && inputValue != 0) {
-        console.log("Oh no");
         return false;
     }
 
@@ -188,12 +105,13 @@ function isValidInput(input, inputValue, promptNum, iteration) {
 
 if (urlNumber) {
     var promptInputs = document.getElementsByClassName('prompt-input');
-    console.log(promptInputs);
 
     var continueArrow = document.getElementById('modal-continue-button-container');
     continueArrow.addEventListener('click', function() {
         for (var i = 0; i < promptInputs.length; i++) {
-            if (isValidInput(promptInputs[i], promptInputs[i].value, urlNumber, i)) {
+            if (isValidInput(promptInputs[i], promptInputs[i].value, urlNumber)) {
+                sessionStorage.setItem([promptInputs[i].id], promptInputs[i].value);
+
                 if (i == promptInputs.length - 1) {
                     if (urlNumber != numberOfPrompts) {
                         window.location = '/budget/' + (urlNumber + 1);
@@ -223,6 +141,15 @@ if (urlNumber) {
 
 // PIE CHART
 else if (url == '/budget') {
+    console.log(sessionStorage);
+    console.log(sessionStorage.length);
+    var monthlyExpenses = Number(sessionStorage["housing-input"])           + Number(sessionStorage["food-input"])                  + Number(sessionStorage["medicine-input"])      + Number(sessionStorage["health-insurance-input"]) +
+                          Number(sessionStorage["house-supplies-input"])    + Number(sessionStorage["clothing-input"])              + Number(sessionStorage["laundry-input"])       +
+                          Number(sessionStorage["utilities-input"])         + Number(sessionStorage["internet-input"])              + Number(sessionStorage["phone-input"])         + Number(sessionStorage["credit-card-input"]) +
+                          Number(sessionStorage["car-payment-input"])       + Number(sessionStorage["car-insurance-input"])         + Number(sessionStorage["car-repairs-input"])   + 
+                          Number(sessionStorage["gas-input"])               + Number(sessionStorage["public-transportation-input"]) + Number(sessionStorage["vacation-fund-input"]) + 
+                          Number(sessionStorage["student-tuition-input"])   + Number(sessionStorage["student-fees-input"])          + Number(sessionStorage["student-loan-input"]) +
+                          Number(sessionStorage["emergency-fund-input"])    + Number(sessionStorage["savings-input"])               + Number(sessionStorage["investments-input"])   + Number(sessionStorage["other-expenses-input"]);
     window.onload = function () {
 
         var chart = new CanvasJS.Chart("chartContainer", {
@@ -241,21 +168,21 @@ else if (url == '/budget') {
                 toolTipContent: "{name}: <strong>{y}%</strong>",
                 indexLabel: "{name} - {y}%",
                 dataPoints: [
-                    { y: 26, name: "Housing", exploded: true },
-                    { y: 20, name: "Food" },
-                    { y: 5,  name: "Health Insurance" },
-                    { y: 3,  name: "Utilities" },
-                    { y: 7,  name: "Internet" },
-                    { y: 17, name: "Phone" },
-                    { y: 22, name: "Lifestyle"},
-                    { y: 26, name: "Transportation"},
-                    { y: 26, name: "Tuition"},
-                    { y: 26, name: "Student Fees"},
-                    { y: 26, name: "Student Loans"},
-                    { y: 26, name: "Emergency Fund"},
-                    { y: 26, name: "Savings"},
-                    { y: 26, name: "Investments"},
-                    { y: 26, name: "Other"}
+                    { y: Math.round(Number(this.sessionStorage["housing-input"]) / monthlyExpenses * 100),          name: "Housing", exploded: true },
+                    { y: Math.round(Number(this.sessionStorage["food-input"]) / monthlyExpenses * 100),             name: "Food" },
+                    { y: Math.round(Number(this.sessionStorage["health-insurance-input"]) / monthlyExpenses * 100), name: "Health Insurance" },
+                    { y: Math.round(Number(this.sessionStorage["utilities-input"]) / monthlyExpenses * 100),        name: "Utilities" },
+                    { y: Math.round(Number(this.sessionStorage["internet-input"]) / monthlyExpenses * 100),         name: "Internet" },
+                    { y: Math.round(Number(this.sessionStorage["phone-input"]) / monthlyExpenses * 100),            name: "Phone" },
+                    { y: Math.round(Number(this.sessionStorage["housing-input"]) / monthlyExpenses * 100),          name: "Lifestyle"},
+                    { y: Math.round(Number(this.sessionStorage["housing-input"]) / monthlyExpenses * 100),          name: "Transportation"},
+                    { y: Math.round(Number(this.sessionStorage["student-tuition-input"]) / monthlyExpenses * 100),  name: "Tuition"},
+                    { y: Math.round(Number(this.sessionStorage["student-fees-input"]) / monthlyExpenses * 100),     name: "Student Fees"},
+                    { y: Math.round(Number(this.sessionStorage["student-loan-input"]) / monthlyExpenses * 100),     name: "Student Loans"},
+                    { y: Math.round(Number(this.sessionStorage["emergency-fund-input"]) / monthlyExpenses * 100),   name: "Emergency Fund"},
+                    { y: Math.round(Number(this.sessionStorage["savings-input"]) / monthlyExpenses * 100),          name: "Savings"},
+                    { y: Math.round(Number(this.sessionStorage["investments-input"]) / monthlyExpenses * 100),      name: "Investments"},
+                    { y: Math.round(Number(this.sessionStorage["other-expenses-input"]) / monthlyExpenses * 100),   name: "Other"}
                 ]
             }]
         });
