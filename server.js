@@ -22,7 +22,7 @@ app.get('/budget', function(req, res, next) {
 
 app.get('/budget/:promptNumber', function(req, res, next) {
     var promptNumber = req.params.promptNumber;
-    if (1 <= promptNumber <= promptsLength) {
+    if (1 <= promptNumber && promptNumber <= promptsLength) {
         res.status(200).render('./partials/modal', prompts[req.params.promptNumber]);
     } else {
         next();
